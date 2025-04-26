@@ -134,17 +134,21 @@ class ChildComponent extends React.Component {
 
 export default ChildComponent;
 ```
-Step | What happens | Component
-1 | Parent constructor | ParentComponent
-2 | Parent render starts | ParentComponent
-3 | First Child constructor | ChildComponent ("first")
-4 | First Child render | ChildComponent ("first")
-5 | Second Child constructor | ChildComponent ("second")
-6 | Second Child render | ChildComponent ("second")
-7 | Parent render finishes | ParentComponent
-8 | First Child componentDidMount | ChildComponent ("first")
-9 | Second Child componentDidMount | ChildComponent ("second")
-10 | Parent componentDidMount | ParentComponent
+## 🛠 Lifecycle Steps Table
+
+| Step | What Happens | Component |
+|:---|:---|:---|
+| 1 | Parent constructor | `ParentComponent` |
+| 2 | Parent render starts | `ParentComponent` |
+| 3 | First Child constructor | `ChildComponent ("first")` |
+| 4 | First Child render | `ChildComponent ("first")` |
+| 5 | Second Child constructor | `ChildComponent ("second")` |
+| 6 | Second Child render | `ChildComponent ("second")` |
+| 7 | Parent render finishes | `ParentComponent` |
+| 8 | First Child componentDidMount | `ChildComponent ("first")` |
+| 9 | Second Child componentDidMount | `ChildComponent ("second")` |
+| 10 | Parent componentDidMount | `ParentComponent` |
+
 
 ## 🧠 Why this order?
 
