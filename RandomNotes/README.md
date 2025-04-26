@@ -67,4 +67,90 @@ class MyComponent extends React.Component {
 - Without it = ❌ Error.
 - With it = ✅ Everything works perfectly.
 
+# 📌 ComponentDidMount Use Case for Class-Based Components
+
+In class-based components, when a component initializes or mounts, the lifecycle steps happen in this order:
+
+- First, constructor is called.
+- Then, render method is called.
+- After the component is placed into the DOM, the componentDidMount method is called.
+
+```js
+// ParentComponent.js
+import React from "react";
+import ChildComponent from "./ChildComponent";
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("Parent Constructor Called");
+
+    this.state = {
+      message: "Welcome",
+    };
+  }
+
+  componentDidMount() {
+    console.log("Parent componentDidMount Called");
+  }
+
+  render() {
+    console.log("Parent Render Called");
+
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+
+        {/* Using ChildComponent Twice with different props */}
+        <ChildComponent name="first" />
+        <ChildComponent name="second" />
+      </div>
+    );
+  }
+}
+
+export default ParentComponent;
+```
+
+```js
+// ChildComponent.js
+import React from "react";
+
+class ChildComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.name + " Constructor Called");
+  }
+
+  componentDidMount() {
+    console.log(this.props.name + " componentDidMount Called");
+  }
+
+  render() {
+    console.log("ChildComponent Rendered with name:", this.props.name);
+    return <h2>Hello, {this.props.name}!</h2>;
+  }
+}
+
+export default ChildComponent;
+```
+Step | What happens | Component
+1 | Parent constructor | ParentComponent
+2 | Parent render starts | ParentComponent
+3 | First Child constructor | ChildComponent ("first")
+4 | First Child render | ChildComponent ("first")
+5 | Second Child constructor | ChildComponent ("second")
+6 | Second Child render | ChildComponent ("second")
+7 | Parent render finishes | ParentComponent
+8 | First Child componentDidMount | ChildComponent ("first")
+9 | Second Child componentDidMount | ChildComponent ("second")
+10 | Parent componentDidMount | ParentComponent
+
+## 🧠 Why this order?
+
+Because DOM updates are expensive, React first prepares all components in memory (Virtual DOM) during the render phase.
+Only after all renders are complete, React updates the real DOM and then calls componentDidMount() for each component.
+
+This improves performance and gives a smooth user experience. 🚀
+
 
