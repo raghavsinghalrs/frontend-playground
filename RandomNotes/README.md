@@ -41,4 +41,30 @@ console.log(newDate.toString()); // "2025-05-26"
 
 This ensures better performance and smoother UI updates.
 
+# Class based components
+
+## 🚀 Why use super(props)
+
+👉 In React, when you create a class component, you extend from React.Component.
+This means your component is a child, and React.Component is the parent.
+
+```js
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+}
+```
+
+- constructor(props) is your component’s setup function.
+- super(props) calls the parent’s constructor (React.Component's constructor).
+- It gives your component access to this.props and other important React features.
+
+## 🏁 Final Baby-Simple Summary:
+
+- super(props) = telling React:
+- "Hey parent, please do your setup! I need props and this."
+- Without it = ❌ Error.
+- With it = ✅ Everything works perfectly.
+
 
