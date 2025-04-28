@@ -7,7 +7,7 @@ Each folder contains notes taken from a specific YouTube channel, blog, or cours
 ## Structure
 
 - `RoadsideCoder` – Notes from Roadside coder
-- `RandomNotes` – Interesting posts(linkedin, medium etc)
+- `RandomNotes` – Notes created for my doubts, or I liked something
 
 ## Purpose
 
