@@ -176,7 +176,31 @@ This improves performance and gives a smooth user experience. 🚀
         ↓
 [During re-render] Hook function called again
 ```
+```
+function useJsonData() {
+  const [data, setData] = useState({ name: "Raghav" });
+
+  useEffect(() => {
+    // maybe fetch data or update
+    setTimeout(() => {
+      setData({ name: "Bro" });
+    }, 2000);
+  }, []);
+
+  return data;
+}
+
+function App() {
+  const jsonData = useJsonData();
+
+  console.log(jsonData);
+
+  return <div>{jsonData.name}</div>;
+}
+
+```
 
 ## Important ⚡
 - Hooks can't exist outside a component render — they live and breathe only because components render.
 - When your component renders again, React restores the previous state properly inside the hook.
+  
