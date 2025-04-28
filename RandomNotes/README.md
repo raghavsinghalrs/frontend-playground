@@ -176,7 +176,7 @@ This improves performance and gives a smooth user experience. 🚀
         ↓
 [During re-render] Hook function called again
 ```
-```
+```js
 function useJsonData() {
   const [data, setData] = useState({ name: "Raghav" });
 
