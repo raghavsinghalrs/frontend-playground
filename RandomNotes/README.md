@@ -157,4 +157,26 @@ Only after all renders are complete, React updates the real DOM and then calls c
 
 This improves performance and gives a smooth user experience. 🚀
 
+# Custom hook rerendering
 
+- ✅ When the state variable updates inside your custom hook.
+- ✅ React marks the component that uses the hook for re-render.
+- ✅ During re-render, your component re-runs.
+- ✅ Which means your custom hook is called again (because hooks are just part of the component render).
+
+## 🔥 So it's like:
+
+- State inside hook changes ➔ Component re-renders ➔ Hook runs again.
+- It's not because of the hook itself, it's because the component re-renders that hook re-executes.
+
+```js
+[Inside Hook] setState() called 
+        ↓
+[React] Component re-render scheduled 
+        ↓
+[During re-render] Hook function called again
+```
+
+## Important ⚡
+- Hooks can't exist outside a component render — they live and breathe only because components render.
+- When your component renders again, React restores the previous state properly inside the hook.
