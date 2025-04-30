@@ -91,3 +91,17 @@ const data = arr.myReduce((acc, curr) => acc + curr, 0);
 console.log(data);
 ```
 
+## 🚀filter
+```js
+Array.prototype.myFilter = function(cb){
+    let arr = [];
+    for(let i = 0; i < this.length; i++){
+        if(cb(this[i])) arr.push(this[i]);
+    }
+    return arr;
+}
+
+const arr = [1,2,3,4,5,6,7];
+const data = arr.myFilter(item => item%2 == 0)
+console.log(data);
+```
