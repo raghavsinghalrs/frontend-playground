@@ -1,5 +1,7 @@
 # Map vs forEach difference 
 
+## Difference in returning as map returns the new array while forEach modifies the original array
+
 ```js
 const arr = [1,2,3,4]
 
@@ -15,3 +17,12 @@ const forEachRes = arr.forEach((item, index) => {
 });
 
 console.log(arr); // [4,5,6,7] Modifies the original array
+```
+
+## In map we can chaining difference funtions
+
+```js
+const arr = [1,2,3,4]
+
+const mapRes = arr.map(item => item + 3).filter();
+```
