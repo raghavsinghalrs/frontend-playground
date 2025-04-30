@@ -36,4 +36,12 @@ console.log(sum);
 
 ```
 
+## Now with the same above question want the names who have scored more than 80
+
+```js
+const arr = [{name : 'A', rollNumber: 1, marks: 40}, {name : 'B', rollNumber: 2, marks: 100}]
+
+const res = arr.filter(item => item.marks > 40).map(item => item.name);
+console.log(res);
+```
 
