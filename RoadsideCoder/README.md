@@ -45,3 +45,49 @@ const res = arr.filter(item => item.marks > 40).map(item => item.name);
 console.log(res);
 ```
 
+# Polyfills
+
+##  🚀map
+```js
+Array.prototype.myMap = function(cb) {
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    arr.push(cb(this[i], i, this));
+  }
+  return arr;
+};
+```
+
+## 🚀forEach
+```js
+Array.prototype.myForEach = function(cb){
+    for(let i = 0; i < this.length; i++){
+        (cb(this[i], i , this));
+    }
+}
+
+const arr = [1, 2, 3];
+arr.myForEach((item) => console.log(item));
+```
+
+## 🚀reduce
+```js
+Array.prototype.myReduce = function(cb, initialVal = null){
+    let accumulator = initialVal;
+    let startIndex = 0;
+    if(!accumulator){
+        accumulator = this[0];
+        startIndex = 1
+    }
+    for(let i = startIndex; i < this.length; i++){
+        accumulator = cb(accumulator, this[i], i, this);
+    }
+    
+    return accumulator;
+}
+
+const arr = [1, 2, 3];
+const data = arr.myReduce((acc, curr) => acc + curr, 0);
+console.log(data);
+```
+
