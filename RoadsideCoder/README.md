@@ -1,4 +1,4 @@
-# Map vs forEach difference 
+# Map, forEach, reduce 
 
 ## Difference in returning as map returns the new array while forEach modifies the original array
 
@@ -19,10 +19,21 @@ const forEachRes = arr.forEach((item, index) => {
 console.log(arr); // [4,5,6,7] Modifies the original array
 ```
 
-## In map we can chaining difference funtions
+## In map we can chaining difference functions
 
 ```js
 const arr = [1,2,3,4]
 
 const mapRes = arr.map(item => item + 3).filter();
 ```
+
+## Reduce example
+
+```js
+let arr = [{name : 'A', rollNumber: 1, marks: 40}, {name : 'B', rollNumber: 2, marks: 100}]
+const sum = arr.reduce((acc,curr) => acc + curr.marks, 0);
+console.log(sum);
+
+```
+
+
