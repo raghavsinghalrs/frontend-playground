@@ -78,4 +78,4 @@ console.log(res) // function (hometown) { console.log(this.firstName + " " + thi
 console.log(res()); // Raghav Singhal morena
 ```
 
-
+# Pollyfill for Bind and function currying
