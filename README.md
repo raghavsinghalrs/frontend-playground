@@ -1,4 +1,4 @@
-# javascript-playground
+# frontend-playground
 
 This repository is a collection of my JavaScript & react notes from various sources.
 
