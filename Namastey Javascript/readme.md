@@ -48,5 +48,34 @@ let printFullName = function(homeTown){
 printFullName.call(name, "Morena"); // Raghav Singhal morena
 ```
 
+Apply method (same as call method, just a difference how we are passing)
+
+```js
+let name = {
+  firstName : 'Raghav',
+  lastName : 'Singhal',
+};
+
+let name2 = {
+  firstName : 'X',
+  lastName : 'Y',
+};
+
+let printFullName = function(hometown){
+  console.log(this.firstName + " " + this.lastName, hometown);
+}
+
+printFullName.apply(name,["morena"]); // Raghav Singhl morena
+```
+
+Bind Method
+
+It is similar like call method but it gives us a copy and we can invoke it later.
+
+```js
+let res = printFullName.bind(name,"morena");
+console.log(res) // function (hometown) { console.log(this.firstName + " " + this.lastName, hometown);}
+console.log(res()); // Raghav Singhal morena
+```
 
 
