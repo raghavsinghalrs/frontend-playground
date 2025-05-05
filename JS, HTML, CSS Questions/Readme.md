@@ -9,20 +9,17 @@ curry function in JavaScript that transforms any function into its curried versi
 
 ```js
 function curry(fn) {
-  const arity = fn.length;
-
-  function curried(...args) {
-    if (args.length >= arity) {
-      return fn.apply(this, args);
-    } else {
-      return function (...nextArgs) {
-        return curried.apply(this, args.concat(nextArgs));
-      };
+    return function curried(...args) {
+        if (args.length >= fn.length) {
+            return fn(...args);
+        } else {
+            return function (...nextArgs) {
+                return curried(...args, ...nextArgs);
+            };
+        }
     }
-  }
-
-  return curried;
 }
+
 ```
 
 
