@@ -127,6 +127,8 @@ multiplyBy3(4);
 ```
 
 ```js
+// using closure concept
+
 let multiply = function(x){
     return function(y){
         console.log(x*y);
