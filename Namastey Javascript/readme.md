@@ -78,7 +78,7 @@ console.log(res) // function (hometown) { console.log(this.firstName + " " + thi
 console.log(res()); // Raghav Singhal morena
 ```
 
-# Pollyfill for Bind and function currying
+# Pollyfill for Bind
 
 ```js
 let name = {
@@ -108,3 +108,6 @@ Function.prototype.myBind = function(...args){
 let printMyName2 = printName.myBind(name, "Hello");
 printMyName2("Morena");
 ```
+# function currying
+
+It includes concept of bind and closures.
