@@ -111,3 +111,28 @@ printMyName2("Morena");
 # function currying
 
 It includes concept of bind and closures.
+
+```js
+//Using bind method it will make a copy of multiply function and we are passing the values.
+
+const multiply = (x,y) => {
+    console.log(x*y);
+}
+
+const multiplyBy2 = multiply.bind(this,2);
+multiplyBy2(3);
+
+const multiplyBy3 = multiply.bind(this,3);
+multiplyBy3(4);
+```
+
+```js
+let multiply = function(x){
+    return function(y){
+        console.log(x*y);
+    }
+}
+
+let multiplyBy2 = multiply(2);
+multiplyBy2(3);
+```
