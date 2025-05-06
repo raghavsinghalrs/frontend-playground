@@ -108,7 +108,7 @@ Function.prototype.myBind = function(...args){
 let printMyName2 = printName.myBind(name, "Hello");
 printMyName2("Morena");
 ```
-# function currying
+# Function currying
 
 It includes concept of bind and closures.
 
@@ -138,3 +138,5 @@ let multiply = function(x){
 let multiplyBy2 = multiply(2);
 multiplyBy2(3);
 ```
+
+# The Scope Chain, Scope & Lexical Environment 🚀
