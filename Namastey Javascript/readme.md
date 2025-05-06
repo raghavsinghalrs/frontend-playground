@@ -79,3 +79,32 @@ console.log(res()); // Raghav Singhal morena
 ```
 
 # Pollyfill for Bind and function currying
+
+```js
+let name = {
+    firstName : 'Raghav',
+    LastName : 'Singhal'
+}
+
+//Bind method
+
+let printName = function(args, city){
+    console.log(args, this.firstName + " " + this.LastName, city);
+}
+
+let printMyName = printName.bind(name, "Hello");
+printMyName("Morena");
+
+
+// Pollyfill of bind method
+Function.prototype.myBind = function(...args){
+    let obj = this;
+    let params = args.slice(1);
+    return function(...args2){
+        obj.apply(args[0], [...params, ...args2]);
+    }
+}
+
+let printMyName2 = printName.myBind(name, "Hello");
+printMyName2("Morena");
+```
