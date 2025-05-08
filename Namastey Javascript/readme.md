@@ -152,3 +152,5 @@ function a(){
 a();
 
 in hierarchy, c function is lexically inside a, and a is lexically inside global object.
+
+Lexical environment : Local memory + lexical environment of parent And the chain of lexical environment is <b>scope chain</b>.
