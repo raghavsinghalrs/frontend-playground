@@ -140,3 +140,15 @@ multiplyBy2(3);
 ```
 
 # The Scope Chain, Scope & Lexical Environment 🚀
+
+```js
+function a(){
+    var a = 10;
+    c();
+    function c(){
+        console.log(a);
+    }
+}
+a();
+
+in hierarchy, c function is lexically inside a, and a is lexically inside global object.
