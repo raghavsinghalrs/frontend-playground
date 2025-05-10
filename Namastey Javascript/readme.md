@@ -154,3 +154,38 @@ a();
 in hierarchy, c function is lexically inside a, and a is lexically inside global object.
 
 Lexical environment : Local memory + lexical environment of parent And the chain of lexical environment is scope chain.
+
+# Temporal dead zone
+
+let and const are hosited but in temporal dead zone.
+
+```js
+console.log(b); //undefined
+let a = 10;
+var b = 100;
+```
+```js
+console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
+let a = 10;
+var b = 100;
+```
+Now the reason is var attached to the global object but let & const takes memory in different memory space(script) and we can't access before initialize any value to it. But it take memory before initialization any value to it that's why we can say it is hoisted in tdz.
+
+
+# Closures
+Closure is a function bundled with it's lexcical environment forms a closure.
+
+Best example
+
+```js
+function x(){
+    var a = 10;
+    function b(){
+        console.log(a);
+    }
+    return b;
+}
+
+x()();
+//You can see even after returning the function, it has reference of a value
+```
