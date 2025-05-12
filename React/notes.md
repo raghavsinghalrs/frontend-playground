@@ -2,7 +2,6 @@
 
 Passing data from parent to child then child 1 to child 2 and so on....
 
-```
 # Controlled and Uncontrolled components 
 
 There is not an exactly definition for this but if you are controlling a child component using parent component then parent component is known as a controlled component.
