@@ -1,1 +1,3 @@
+# Props drilling
 
+Passing data from parent to child then child 1 to child 2 and so on....
