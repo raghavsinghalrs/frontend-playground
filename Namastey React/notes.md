@@ -21,3 +21,15 @@ Suppose we want to make add to card functionality, let's see how to implement re
 - Now how to read the data using the selector.
 - This is how we can modify the react component (selector will give data and we can rendor it)
 - This is also known as subscribing to the store.
+
+```js
+[Click Add Button]
+        ↓
+[Dispatch Action]
+        ↓
+[Reducer Function]
+        ↓
+[Modify Redux Store Slice]
+        ↓
+[Update React Component] ←── Subscribe(selector)
+```
