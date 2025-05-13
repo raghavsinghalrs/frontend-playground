@@ -23,13 +23,7 @@ Suppose we want to make add to card functionality, let's see how to implement re
 - This is also known as subscribing to the store.
 
 ```js
-[Click Add Button]
-        ↓
-[Dispatch Action]
-        ↓
-[Reducer Function]
-        ↓
-[Modify Redux Store Slice]
-        ↓
-[Update React Component] ←── Subscribe(selector)
+[Click Add Button] -> [Dispatch Action] -> [Reducer Function] -> [Modify Redux Store Slice]
+                                                                               ↓
+                                      Modifies the react component  <-  Subscribe(selector)
 ```
