@@ -27,3 +27,14 @@ Suppose we want to make add to card functionality, let's see how to implement re
                                                                                ↓
                                       Modifies the react component  <-  Subscribe(selector)
 ```
+
+Make sure you are subscribing to the items which you really want otherwise it can create hug performance loss
+
+```js
+//Here you are subscribing to all the stores
+const store = useSelector((store) => store);
+const items = store.cart.items;
+
+//here you are accessing to the one which you really needed
+const items = useSelector((store) => store.cart.items);
+```
