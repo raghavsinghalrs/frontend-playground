@@ -226,4 +226,40 @@ function App() {
 ## Important ⚡
 - Hooks can't exist outside a component render — they live and breathe only because components render.
 - When your component renders again, React restores the previous state properly inside the hook.
+
+
+# JS Question (related to lexcial scope and shadowing)
+
+```js
+let a = 1;
+
+function b() {
+    console.log(a);
+    a = 2;
+}
+
+b();
+```
+
+Important Concepts:
+This code works without errors because:
+
+- You are reading the value of a (console.log(a)) before you reassign it (a = 2;).
+- There's no variable a declared inside the function b() (e.g., let a; inside b()), so JavaScript looks for a in the outer scope (lexical environment).
+
+```js
+let a = 1;
+
+function b() {
+    console.log(a); // ReferenceError
+    let a = 2;
+}
+
+b();
+```
+
+Key Takeaways:
+- Lexical scope still applies, but local declarations with let or const shadow outer ones.
+- The shadowed variable exists in the TDZ until it's initialized.
+- Accessing it before initialization throws a ReferenceError.
       
