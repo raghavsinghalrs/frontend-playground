@@ -1,3 +1,28 @@
+# use effect is the part of commit phase
+
+```js
+function MyComponent() {
+  const [count, setCount] = useState(0);
+  
+  console.log("Rendering component...");
+
+  useEffect(() => {
+    console.log("Running useEffect...");
+  }, []);
+
+  return <div>Count: {count}</div>;
+}
+```
+
+- First, the render happens ("Rendering component...")
+- Then the DOM is updated with JSX (<div>Count: 0</div>)
+- After that, the browser paints the UI
+- Finally, useEffect runs ("Running useEffect...")
+
+💡 Why is this useful?
+This ensures that effects (like subscriptions, API calls, timers, DOM manipulation, etc.) don’t block rendering. Your app stays fast and responsive.
+
+
 # Props drilling
 
 Passing data from parent to child then child 1 to child 2 and so on....
