@@ -1,4 +1,4 @@
-# Map, forEach, reduce 
+# Map, forEach, reduce and many more (JS Methods)
 
 ## Difference in returning as map returns the new array while forEach modifies the original array
 
@@ -105,3 +105,40 @@ const arr = [1,2,3,4,5,6,7];
 const data = arr.myFilter(item => item%2 == 0)
 console.log(data);
 ```
+## same 
+```js
+a = [1,5];
+
+const res = a.some(item => item%2==0);
+console.log(res); //false
+
+b = [1,2,3,4,5];
+
+const res = b.some(item => item%2==0);
+console.log(res); //true
+```
+## every
+If every elements present in the arrat matches the condition it will return true otherwise false.
+
+```js
+a = [1,5];
+
+const res = a.every(item => item>0);
+console.log(res); //true
+
+a = [1,2,3,4,5,6];
+
+const res = a.every(item => item>1);
+console.log(res); // false
+```
+
+## flat
+```js
+const numbers = [1,[2,3],[[4,5],6]];
+const b = numbers.flat(1); // 1 -> upto how many levels you want to flatten the array
+console.log(b); // [1,2,3,[4,5],6]
+
+const b = numbers.flat(2); // 2 -> upto how many levels you want to flatten the array
+console.log(b); // [1,2,3,4,5,6]
+```
+
