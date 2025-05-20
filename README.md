@@ -1,3 +1,5 @@
+
+Before going for interview please visit this link -> https://youtu.be/u1jU6xilGQg?si=4q_dyUzk9NJs4WPq
 # frontend-playground
 
 This repository is a collection of my JavaScript & react notes from various sources.
