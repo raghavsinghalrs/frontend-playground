@@ -5,7 +5,7 @@ Prepared with Topics
 - Local Storage
 - Common things to implement searching, sorting, filtering, tagging
 - Flexbox in css
-- thinking recursively
+- thinking recursively (video on this topic on akshay saini channel)
 
 ## Comment section
 Features
