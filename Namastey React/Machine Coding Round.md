@@ -1,5 +1,12 @@
 # Questions/Patterns
 
+Prepared with Topics
+- DOM manipulation (Pure js)
+- Local Storage
+- Common things to implement searching, sorting, filtering, tagging
+- Flexbox in css
+- thinking recursively
+
 ## Comment section
 Features
 - A comment can have multiple children, reply functionality, likes, edit and delete
