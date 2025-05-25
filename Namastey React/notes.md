@@ -69,11 +69,12 @@ React now has:
 3. React.createElement() produces a Virtual DOM object:
    ```js
    {
-  type: 'span',
-  props: {
+    type: 'span',
+    props: {
     children: 'Hello'
-  },
-  ...
+    },
+   ...
+  }
 4. So the real DOM is created by: ✅ createRoot().render(<App />)
 
 
