@@ -1,3 +1,82 @@
+# Virtual Dom
+
+React uses a single Virtual DOM, but during updates, it creates two versions of the Virtual DOM:
+- Previous Virtual DOM (before the update)
+- New Virtual DOM (after the update)
+
+```
+function App() {
+  return <span>Hello</span>;
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+🧱 What happens here:
+- React reads your JSX (<span>Hello</span>) and builds a Virtual DOM representation of it — an object like:
+```js
+{
+  type: 'span',
+  props: { children: 'Hello' },
+  ...
+}
+```
+- This Virtual DOM is then used to create the real DOM, and React inserts the real <span>Hello</span> into #root.
+- This Virtual DOM snapshot is saved internally by React as the "previous virtual DOM" for future updates.
+🔄 Now you update the content:
+Let’s say after 2 seconds, you change the content using state:
+
+```js
+function App() {
+  const [text, setText] = React.useState('Hello');
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setText('World');
+    }, 2000);
+  }, []);
+
+  return <span>{text}</span>;
+}
+```
+What happens now:
+- When setText('World') runs, React re-renders the component.
+- A new Virtual DOM is created:
+```js
+{
+  type: 'span',
+  props: { children: 'World' },
+  ...
+}
+```
+React now has:
+- Old Virtual DOM: <span>Hello</span>
+- New Virtual DOM: <span>World</span>
+- React runs its diffing algorithm:
+- It sees that only the text content has changed.
+- React applies a minimal real DOM update:
+- It doesn’t remove or replace the whole <span> — it just updates the text inside it.
+
+## 🔧 Who creates the real DOM from the virtual DOM?
+✅ React does it internally using its reconciliation engine.
+1. You write JSX:
+   ```js
+     <span>Hello</span>
+   ```
+2. Babel transpiles it into:
+   ```js
+     React.createElement("span", null, "Hello");
+   ```
+3. React.createElement() produces a Virtual DOM object:
+   ```js
+   {
+  type: 'span',
+  props: {
+    children: 'Hello'
+  },
+  ...
+4. So the real DOM is created by: ✅ createRoot().render(<App />)
+
+
 # use effect is the part of commit phase
 
 ```js
