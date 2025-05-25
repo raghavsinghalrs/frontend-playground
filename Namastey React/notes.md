@@ -74,7 +74,7 @@ React now has:
     children: 'Hello'
     },
    ...
-  }
+    }
 4. So the real DOM is created by: ✅ createRoot().render(<App />)
 
 
